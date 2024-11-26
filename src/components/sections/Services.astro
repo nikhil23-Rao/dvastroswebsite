@@ -3,37 +3,55 @@ import Service from "../cards/Service.astro";
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
-import { services } from "../../utils/data.ts";
-
+import { services, services1 } from "../../utils/data.ts";
 
 type ServicesProps = {
-    title: string;
-    description: string;
-    icon: string
+  title: string;
+  description: string;
+  icon: string;
 };
-
-
 ---
 
 <section id="services">
-    <Container className="space-y-10 md:sapce-y-12">
-        <div class="text-center max-w-3xl mx-auto space-y-4">
-            <Title>
-                What we offer
-            </Title>
-            <Paragraph>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </Paragraph>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {
-                    services.map((service: ServicesProps) => {
-                    return (
-                            <Service title={service.title} description={service.description} icon={service.icon}>
-                            </Service>
-                            );
-                    })
-            }
-        </div>
-    </Container>
+  <Container className="space-y-10 md:sapce-y-12">
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <Title> Artemis II Mission </Title>
+      <Paragraph> NASA ADC's 2025 Visualization </Paragraph>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {
+        services.map((service: ServicesProps) => {
+          return (
+            <Service
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+            />
+          );
+        })
+      }
+    </div>
+  </Container>
+</section>
+
+<section id="overview">
+  <Container className="space-y-10 md:sapce-y-12">
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <Title>Development Overview</Title>
+      <Paragraph> NASA ADC's 2025 Visualization </Paragraph>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {
+        services1.map((service: ServicesProps) => {
+          return (
+            <Service
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+            />
+          );
+        })
+      }
+    </div>
+  </Container>
 </section>
